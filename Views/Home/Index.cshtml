@@ -1,0 +1,80 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model User;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Registration</title>
+
+    <style>
+
+    </style>
+    <script>
+
+        function submitForm() {
+            let first = document.getElementById('FirstNameElem');
+            let last = document.getElementById('LastNameElem');
+            let email = document.getElementById('EmailAddressElem');
+            let password = document.getElementById('PasswordElem');
+            let password2 = document.getElementById('PasswordElem');
+
+            let regExName = /[a-z]{2}/i;
+            let regExEmail = /^([a-z]{2,20})@([a-z]{2,20})(\.[a-z]{2,4})$/i;
+            let regExPass = / /;
+
+            if (regExName.first) {
+                return true;
+            } else {
+                return false;
+            }
+
+            if (regExName.last) {
+                return true;
+            } else {
+                return false;
+            }
+
+            if (regExEmail.email) {
+                return true;
+            } else {
+                return false;
+            }
+
+            if (regExPass.password) {
+                return true;
+            } else {
+                return false;
+            }
+
+            if (password2.value != password.value) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Register below</h1>
+
+    <br /><br /><br />
+    <form method="get" action="/Home/Result" onsubmit="return submitForm()">
+        First Name: <input type="text" name="FirstName" id="FirstNameElem" /><br />
+
+        Last Name: <input type="text" name="LastName" id="LastNameElem" /><br />
+
+        Email Address: <input type="text" name="EmailAddress" id="EmailAddressElem" /><br />
+
+        Password: <input type="text" name="Password" id="PasswordElem" /><br />
+
+        Verify Password: <input type="text" name="ConfirmPass" id="ConfirmPassElem" /><br />
+
+        <input type="submit" />
+    </form>
+</body>
+</html>
